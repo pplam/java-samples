@@ -14,4 +14,16 @@ public class Bar {
       System.out.println(e.getMessage());
     }
   }
+
+  public void baz() {
+    Integer a = 1;
+    Integer b = 0;
+    try {
+      System.out.println(a/b);
+    } catch (Exception e) {
+      for (StackTraceElement ste : Thread.currentThread().getStackTrace()) {
+          System.out.println(ste);
+      }
+    }
+  }
 }
